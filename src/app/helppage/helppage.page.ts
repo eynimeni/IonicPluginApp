@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 
 @Component({
   selector: 'app-helppage',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelppagePage implements OnInit {
 
-  constructor() { }
+
+  constructor(private appVersion: AppVersion) {
+    let appName = this.appVersion.getAppName()
+    console.log(appName)
+
+  }
 
   ngOnInit() {
   }

@@ -8,12 +8,13 @@ import { HelppagePageRoutingModule } from './helppage-routing.module';
 
 import { HelppagePage } from './helppage.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HelppagePageRoutingModule
+    HelppagePageRoutingModule,
   ],
   declarations: [HelppagePage]
 })

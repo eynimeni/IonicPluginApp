@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
+
 
 @Component({
   selector: 'app-home',
@@ -8,14 +8,11 @@ import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 })
 export class HomePage implements OnInit {
 
-  constructor(private appversion: AppVersion) {
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  getAppVersion() {
-    return this.appversion;
-  }
 
 }
