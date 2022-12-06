@@ -8,14 +8,16 @@ import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 })
 export class HelppagePage implements OnInit {
 
-
-  constructor(private appVersion: AppVersion) {
-    let appName = this.appVersion.getAppName()
-    console.log(appName)
+  constructor(public appVersion: AppVersion) {
 
   }
 
   ngOnInit() {
   }
+
+  public appName = this.appVersion.getVersionNumber()
+  //hier kommt ein Object Promise - muss man die AppVersion erst irgendwo rein schreiben,
+  // damit man sie auslesen kann?
+  public developerDetails = "Die Developerin heißt Magdalena Holczik"
 
 }
