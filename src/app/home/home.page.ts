@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
+import {Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
 
 
 @Component({
@@ -9,7 +10,17 @@ import {Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
 })
 export class HomePage implements OnInit {
 
-  constructor(public flashlight: Flashlight) {
+  public latitude = 0
+  public longitude = 0
+
+  constructor(public flashlight: Flashlight, public geolocation: Geolocation) {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.latitude = resp.coords.latitude
+      this.longitude = resp.coords.longitude
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+
   }
 
   ngOnInit() {
