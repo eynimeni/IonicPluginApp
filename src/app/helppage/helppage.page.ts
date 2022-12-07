@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
+import {BuildInfo} from "@awesome-cordova-plugins/build-info/ngx";
+
 
 @Component({
   selector: 'app-helppage',
@@ -8,16 +10,21 @@ import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 })
 export class HelppagePage implements OnInit {
 
+  public developerDetails = "Die Developerin heißt Magdalena Holczik"
   public versionnumber = ""
   public appname = ""
+  public buildingInformations = ""
 
-  constructor(public appVersion: AppVersion) {
 
-    this.appVersion.getAppName().then(value => {this.appname = value;
+
+  constructor(public appVersion: AppVersion, public buildinfo: BuildInfo) {
+
+    this.appVersion.getAppName().then(value => {this.appname = "Appname: " + value;
     }).catch(error => {alert(error)})
-    this.appVersion.getVersionNumber().then(value => {this.versionnumber = value;
+    this.appVersion.getVersionNumber().then(value => {this.versionnumber ="Versionnumber: " + value;
     }).catch(error => {alert(error)})
 
+    this.buildingInformations = "Debugging enabled: " + this.buildinfo.debug + " Builddate: " + this.buildinfo.buildDate + " Buildtype: " + this.buildinfo.buildType
 
   }
 
@@ -25,10 +32,5 @@ export class HelppagePage implements OnInit {
   }
 
 
-
-
-  //hier kommt ein Object Promise - muss man die AppVersion erst irgendwo rein schreiben,
-  // damit man sie auslesen kann?
-  public developerDetails = "Die Developerin heißt Magdalena Holczik"
 
 }

@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
+import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,9 @@ import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
     { provide:
     RouteReuseStrategy,
     useClass: IonicRouteStrategy },
-    AppVersion
+    AppVersion,
+    BuildInfo
+
   ],
   bootstrap: [AppComponent],
 })
