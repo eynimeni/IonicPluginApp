@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
 import { Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
+import {Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
     useClass: IonicRouteStrategy },
     AppVersion,
     BuildInfo,
-    Flashlight
+    Flashlight,
+    Geolocation
 
   ],
   bootstrap: [AppComponent],
