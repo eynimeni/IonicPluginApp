@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
+import { Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
     RouteReuseStrategy,
     useClass: IonicRouteStrategy },
     AppVersion,
-    BuildInfo
+    BuildInfo,
+    Flashlight
 
   ],
   bootstrap: [AppComponent],

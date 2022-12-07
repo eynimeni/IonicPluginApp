@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
 
 
 @Component({
@@ -8,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() {
+  constructor(public flashlight: Flashlight) {
   }
 
+
+
   ngOnInit() {
+  }
+
+  switchOnTorch() {
+    console.log("function clicked")
+    this.flashlight.switchOn()
   }
 
 
