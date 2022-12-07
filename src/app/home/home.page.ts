@@ -12,15 +12,17 @@ export class HomePage implements OnInit {
   constructor(public flashlight: Flashlight) {
   }
 
-
-
   ngOnInit() {
   }
 
   switchOnTorch() {
-    console.log("function clicked")
+    console.log("flashlight on")
     this.flashlight.switchOn()
   }
 
 
+  switchOffTorch() {
+    console.log("flashlight on")
+    this.flashlight.switchOff()
+  }
 }
