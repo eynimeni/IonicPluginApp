@@ -11,6 +11,7 @@ import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
 import { Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
 import {Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,

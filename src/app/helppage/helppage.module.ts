@@ -8,6 +8,8 @@ import { HelppagePageRoutingModule } from './helppage-routing.module';
 
 import { HelppagePage } from './helppage.page';
 
+import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
+
 
 @NgModule({
   imports: [
@@ -16,6 +18,7 @@ import { HelppagePage } from './helppage.page';
     IonicModule,
     HelppagePageRoutingModule,
   ],
-  declarations: [HelppagePage]
+  declarations: [HelppagePage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HelppagePageModule {}
