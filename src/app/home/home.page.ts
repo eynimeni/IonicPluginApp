@@ -13,7 +13,6 @@ export class HomePage implements OnInit {
   public longitude = 0
   public location: any
 
-
   constructor(public flashlight: Flashlight, private geolocation: Geolocation) {
 
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -27,7 +26,9 @@ export class HomePage implements OnInit {
     this.location.subscribe((resp: any) => {
       this.latitude = resp.coords.longitude
       this.longitude = resp.coords.latitude
-    })
+    }).catch((error: any) =>{
+      console.log('Error updating location', error);
+      })
 
 
   }
