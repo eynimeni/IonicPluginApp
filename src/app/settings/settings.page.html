@@ -6,4 +6,11 @@
 
 <ion-content>
 
+  <ion-label> Koordinaten anzeigen </ion-label>
+  <ion-toggle [(ngModel)]="coordsDisplay" (ngModelChange)="updateCoordsDisplay()"></ion-toggle>
+<br>
+  <ion-label> Taschenlampe anzeigen </ion-label>
+  <ion-toggle [(ngModel)]="flashLightDisplay" (ngModelChange)="updateFlashLightDisplay()"></ion-toggle>
+
+
 </ion-content>

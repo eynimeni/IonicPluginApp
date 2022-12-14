@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsPage implements OnInit {
 
+  coordsDisplay = true
+  flashLightDisplay = true
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  updateCoordsDisplay() {
+    console.log("coordsDisplay")
+  }
+
+  updateFlashLightDisplay() {
+    console.log("flashlightDisplay")
+
+  }
 }

@@ -29,8 +29,6 @@ export class HomePage implements OnInit {
     }).catch((error: any) =>{
       console.log('Error updating location', error);
       })
-
-
   }
 
 

@@ -10,6 +10,7 @@ import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
 import { Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
 import {Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
+import {Storage} from "@ionic/storage";
 
 
 @NgModule({
@@ -25,9 +26,12 @@ import {Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
     AppVersion,
     BuildInfo,
     Flashlight,
-    Geolocation
+    Geolocation,
+    Storage
 
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+
+}

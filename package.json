@@ -30,6 +30,7 @@
     "@capacitor/keyboard": "4.1.0",
     "@capacitor/status-bar": "4.1.1",
     "@ionic/angular": "^6.1.9",
+    "@ionic/storage": "^3.0.6",
     "cordova-plugin-app-version": "^0.1.14",
     "cordova-plugin-buildinfo": "^4.0.0",
     "cordova-plugin-flashlight": "^3.2.0",

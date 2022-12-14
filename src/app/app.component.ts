@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Storage} from '@ionic/storage'
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -10,5 +12,7 @@ export class AppComponent {
     { title: 'Settings', url: '/settings', icon: 'settings' },
     { title: 'Help', url: '/helppage', icon: 'help' },
   ];
-  constructor() {}
+  constructor(protected storage: Storage) {
+    this.storage.create();
+  }
 }
