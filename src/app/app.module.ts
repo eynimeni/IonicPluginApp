@@ -13,6 +13,7 @@ import { Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
 import { Storage} from "@ionic/storage";
 import { environment} from "../environments/environment";
 import { LocalNotifications} from "@awesome-cordova-plugins/local-notifications/ngx";
+import { SplashScreen} from "@awesome-cordova-plugins/splash-screen/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { LocalNotifications} from "@awesome-cordova-plugins/local-notifications/
     Flashlight,
     Geolocation,
     Storage,
-    LocalNotifications
+    LocalNotifications,
+    SplashScreen
 
   ],
   bootstrap: [AppComponent],
