@@ -9,9 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppVersion } from "@awesome-cordova-plugins/app-version/ngx";
 import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
 import { Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
-import {Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
-import {Storage} from "@ionic/storage";
-import {environment} from "../environments/environment";
+import { Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
+import { Storage} from "@ionic/storage";
+import { environment} from "../environments/environment";
+import { LocalNotifications} from "@awesome-cordova-plugins/local-notifications/ngx";
 
 
 
@@ -29,7 +30,8 @@ import {environment} from "../environments/environment";
     BuildInfo,
     Flashlight,
     Geolocation,
-    Storage
+    Storage,
+    LocalNotifications
 
   ],
   bootstrap: [AppComponent],

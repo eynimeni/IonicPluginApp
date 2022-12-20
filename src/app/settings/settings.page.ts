@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LocalNotifications} from "@awesome-cordova-plugins/local-notifications/ngx";
 
 @Component({
   selector: 'app-settings',
@@ -11,16 +12,16 @@ export class SettingsPage implements OnInit {
   flashLightDisplay = false
 
   constructor(
-    //private localNotifications: LocalNotifications
+    private localNotifications: LocalNotifications
   ) {
 
-    /*
+
         this.localNotifications.schedule({
         id: 1,
         text: 'Notification',
     }
     )
-     */
+
 
 
   }
