@@ -11,6 +11,8 @@ import { BuildInfo } from "@awesome-cordova-plugins/build-info/ngx";
 import { Flashlight} from "@awesome-cordova-plugins/flashlight/ngx";
 import {Geolocation} from "@awesome-cordova-plugins/geolocation/ngx";
 import {Storage} from "@ionic/storage";
+import {environment} from "../environments/environment";
+
 
 
 @NgModule({
@@ -33,5 +35,12 @@ import {Storage} from "@ionic/storage";
   bootstrap: [AppComponent],
 })
 export class AppModule {
+  constructor() {
+    console.log("Production mode enabled:" + environment.production)
+    if (environment.production == true) {
+      document.body.classList.toggle('dark')
+    }
+  }
+
 
 }
