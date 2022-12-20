@@ -26,11 +26,8 @@ export class HomePage implements OnInit {
     this.location.subscribe((resp: any) => {
       this.latitude = resp.coords.longitude
       this.longitude = resp.coords.latitude
-    }).catch((error: any) =>{
-      console.log('Error updating location', error);
-      })
+    })
   }
-
 
   ngOnInit() {
 

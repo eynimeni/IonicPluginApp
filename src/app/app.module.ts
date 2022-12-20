@@ -14,8 +14,6 @@ import { Storage} from "@ionic/storage";
 import { environment} from "../environments/environment";
 import { LocalNotifications} from "@awesome-cordova-plugins/local-notifications/ngx";
 
-
-
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,
