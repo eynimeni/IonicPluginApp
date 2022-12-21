@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
@@ -8,8 +8,11 @@
 
 <ion-content>
 
-  <div *ngIf="flashlightDisplay" style="padding: 20px; background-color: #f2f2f2"> <h2>Taschenlampe</h2>
-  <ion-button shape="round" color="success" (click)="switchOnTorch()">AN</ion-button>
+  <div *ngIf="flashlightDisplay" style="padding: 20px; background-color: #f2f2f2">
+    <h2>Taschenlampe </h2>
+
+
+    <ion-button shape="round" color="success" (click)="switchOnTorch()">AN</ion-button>
   <ion-button shape="round" color="danger" (click)="switchOffTorch()">AUS</ion-button>
   </div>
 

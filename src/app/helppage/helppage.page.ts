@@ -10,10 +10,10 @@ import {BuildInfo} from "@awesome-cordova-plugins/build-info/ngx";
 })
 export class HelppagePage implements OnInit {
 
-  public developerDetails = "Die Developerin heißt Magdalena Holczik"
-  public versionnumber = ""
-  public appname = ""
-  public buildingInformations = ""
+  public developerDetails = "Die Developerin heißt Magdalena Holczik."
+  public appname = "Auf ihrem mobilen Device werden angezeigt:"
+  public versionnumber = "Appname und Versionsnummer,"
+  public buildingInformations = "sowie Informationen zu Debugging und Building."
 
 
 
@@ -24,7 +24,10 @@ export class HelppagePage implements OnInit {
     this.appVersion.getVersionNumber().then(value => {this.versionnumber ="Versionnumber: " + value;
     }).catch(error => {alert(error)})
 
-    this.buildingInformations = "Debugging enabled: " + this.buildinfo.debug + " Builddate: " + this.buildinfo.buildDate + " Buildtype: " + this.buildinfo.buildType
+    if(this.buildinfo.debug != null) {
+      this.buildingInformations = "Debugging enabled: " + this.buildinfo.debug + " Builddate: " + this.buildinfo.buildDate + " Buildtype: " + this.buildinfo.buildType
+
+    }
 
   }
 
