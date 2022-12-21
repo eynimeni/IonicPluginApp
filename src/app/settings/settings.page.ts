@@ -36,7 +36,7 @@ export class SettingsPage implements OnInit {
     console.log("Koordinatendisplay " + this.coordsDisplay)
     await this.coordsStorageService.save(this.coordsDisplay)
     console.log (await this.coordsStorageService.get())
-    this.sendNotification()
+    this.sendNotification({title: "Geolocation Display", text: "Changes made"})
 
   }
 
@@ -44,15 +44,15 @@ export class SettingsPage implements OnInit {
     console.log("Flashlightdisplay " + this.flashLightDisplay)
     await this.flashlightStorageService.save(this.flashLightDisplay)
     console.log (await this.flashlightStorageService.get())
-    this.sendNotification()
+    this.sendNotification({title: "Flashlight Display", text: "Changes made"})
 
   }
 
-  sendNotification() {
+  sendNotification({title, text}: { title: any, text: any }) {
     this.localNotifications.schedule({
       id: 1,
-      title: 'Notification Title',
-      text: 'Notification Text',
+      title: title,
+      text: text,
     })
   }
 
