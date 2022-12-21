@@ -8,13 +8,13 @@
 
 <ion-content>
 
-  <div *ngIf="flashlightDisplay"> <p>Flashlight</p>
-  <ion-button shape="round" color="success" (click)="switchOnTorch()">ON</ion-button>
-  <ion-button shape="round" color="danger" (click)="switchOffTorch()">OFF</ion-button>
+  <div *ngIf="flashlightDisplay" style="padding: 20px; background-color: #f2f2f2"> <h2>Taschenlampe</h2>
+  <ion-button shape="round" color="success" (click)="switchOnTorch()">AN</ion-button>
+  <ion-button shape="round" color="danger" (click)="switchOffTorch()">AUS</ion-button>
   </div>
 
-  <div *ngIf="coordsDisplay">
-    <p>Ihre aktuelle Position:</p>
+  <div *ngIf="coordsDisplay" style="padding: 20px; background-color: antiquewhite">
+    <h2>Ihre aktuelle Position:</h2>
     <p>Breitengrad: {{latitude}}</p>
     <p>Längengrad: {{longitude}}</p>
   </div>
