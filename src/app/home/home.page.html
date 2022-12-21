@@ -8,15 +8,15 @@
 
 <ion-content>
 
-  <div> Flashlight</div>
+  <div *ngIf="flashlightDisplay"> <p>Flashlight</p>
   <ion-button shape="round" color="success" (click)="switchOnTorch()">ON</ion-button>
   <ion-button shape="round" color="danger" (click)="switchOffTorch()">OFF</ion-button>
+  </div>
 
-  <div>
+  <div *ngIf="coordsDisplay">
     <p>Ihre aktuelle Position:</p>
     <p>Breitengrad: {{latitude}}</p>
     <p>Längengrad: {{longitude}}</p>
-
   </div>
 
 

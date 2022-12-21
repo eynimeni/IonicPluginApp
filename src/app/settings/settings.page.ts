@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LocalNotifications} from "@awesome-cordova-plugins/local-notifications/ngx";
-import {StorageService} from "../services/storage.service";
+import {CoordsStorageService} from "../services/coordsStorage.service";
+import {FlashlightStorageService} from "../services/flashlightStorage.service";
 
 @Component({
   selector: 'app-settings',
@@ -9,43 +10,50 @@ import {StorageService} from "../services/storage.service";
 })
 export class SettingsPage implements OnInit {
 
-  coordsDisplay = true
-  flashLightDisplay = true
+  public coordsDisplay = true
+  public flashLightDisplay= true
 
-  constructor(private localNotifications: LocalNotifications, protected storageService: StorageService)
+  constructor(private localNotifications: LocalNotifications, protected coordsStorageService: CoordsStorageService, protected flashlightStorageService: FlashlightStorageService)
   {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.coordsDisplay = await this.coordsStorageService.get()
+    if (this.coordsDisplay == null) {
+      this.coordsDisplay = true
+      console.log(this.coordsDisplay)
+    }
+    this.flashLightDisplay = await this.flashlightStorageService.get()
+    if (this.flashLightDisplay == null) {
+      this.flashLightDisplay = true
+      console.log(this.flashLightDisplay)
+    }
+
   }
 
   async updateCoordsDisplay() {
     console.log("Koordinatendisplay " + this.coordsDisplay)
-    await this.saveInStorage()
+    await this.coordsStorageService.save(this.coordsDisplay)
+    console.log (await this.coordsStorageService.get())
+    this.sendNotification()
+
   }
 
   async updateFlashLightDisplay() {
     console.log("Flashlightdisplay " + this.flashLightDisplay)
-    await this.saveInStorage()
+    await this.flashlightStorageService.save(this.flashLightDisplay)
+    console.log (await this.flashlightStorageService.get())
+    this.sendNotification()
+
   }
 
   sendNotification() {
-    this.localNotifications.setDefaults({
-      led: {color: '#FF00FF', on: 500, off: 500}
-    })
     this.localNotifications.schedule({
       id: 1,
       title: 'Notification Title',
       text: 'Notification Text',
     })
   }
-
-  async saveInStorage() {
-    const booleansArray = [this.flashLightDisplay, this.coordsDisplay]
-    await this.storageService.save(booleansArray);
-    this.sendNotification()
-  }
-
 
 }

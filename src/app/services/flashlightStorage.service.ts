@@ -4,17 +4,17 @@ import { Storage} from "@ionic/storage";
 @Injectable({
   providedIn: 'root'
 })
-export class StorageService {
+export class FlashlightStorageService {
 
-  private storageKey = 'localStorage'
+  private storageKey = 'flashlight'
 
   constructor(protected storage: Storage) { }
 
-  public save(data: any){
+  public save(data: boolean){
     return this.storage.set(this.storageKey, data)
   }
 
-  public get() {
+  public get(){
     return this.storage.get(this.storageKey)
   }
 
