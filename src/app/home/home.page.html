@@ -8,7 +8,7 @@
 
 <ion-content>
 
-  <div *ngIf="flashlightDisplay" style="padding: 20px; background-color: #f2f2f2">
+  <div *ngIf="flashlightDisplay" style="padding: 20px">
     <h2>Taschenlampe </h2>
 
 
@@ -16,7 +16,7 @@
   <ion-button shape="round" color="danger" (click)="switchOffTorch()">AUS</ion-button>
   </div>
 
-  <div *ngIf="coordsDisplay" style="padding: 20px; background-color: antiquewhite">
+  <div *ngIf="coordsDisplay" style="padding: 20px">
     <h2>Ihre aktuelle Position:</h2>
     <p>Breitengrad: {{latitude}}</p>
     <p>Längengrad: {{longitude}}</p>
