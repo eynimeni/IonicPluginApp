@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LocalNotifications} from "@awesome-cordova-plugins/local-notifications/ngx";
+import {StorageService} from "../services/storage.service";
 
 @Component({
   selector: 'app-settings',
@@ -9,9 +10,9 @@ import {LocalNotifications} from "@awesome-cordova-plugins/local-notifications/n
 export class SettingsPage implements OnInit {
 
   coordsDisplay = true
-  flashLightDisplay = false
+  flashLightDisplay = true
 
-  constructor(private localNotifications: LocalNotifications)
+  constructor(private localNotifications: LocalNotifications, protected storageService: StorageService)
   {
 
   }
@@ -19,28 +20,32 @@ export class SettingsPage implements OnInit {
   ngOnInit() {
   }
 
-  updateCoordsDisplay() {
-    //zum testen hier ein storage service get
-    this.sendNotification()
-    console.log("coordsDisplay")
+  async updateCoordsDisplay() {
+    console.log("Koordinatendisplay " + this.coordsDisplay)
+    await this.saveInStorage()
   }
 
-  updateFlashLightDisplay() {
-    this.sendNotification()
-    console.log("flashlightDisplay")
-
+  async updateFlashLightDisplay() {
+    console.log("Flashlightdisplay " + this.flashLightDisplay)
+    await this.saveInStorage()
   }
 
   sendNotification() {
     this.localNotifications.setDefaults({
       led: {color: '#FF00FF', on: 500, off: 500}
     })
-
     this.localNotifications.schedule({
       id: 1,
       title: 'Notification Title',
       text: 'Notification Text',
     })
-
   }
+
+  async saveInStorage() {
+    const booleansArray = [this.flashLightDisplay, this.coordsDisplay]
+    await this.storageService.save(booleansArray);
+    this.sendNotification()
+  }
+
+
 }

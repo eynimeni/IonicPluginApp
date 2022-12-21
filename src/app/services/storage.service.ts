@@ -14,7 +14,7 @@ export class StorageService {
     return this.storage.set(this.storageKey, data)
   }
 
-  public get(data : any) {
+  public get() {
     return this.storage.get(this.storageKey)
   }
 
